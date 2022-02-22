@@ -1,0 +1,36 @@
+// ============== ¿Qué es el DOM virtual ? ============== //
+
+El DOM virtual (VDOM) es un concepto de programación donde una representación ideal o “virtual” de la IU se mantiene en memoria 
+y en sincronía con el DOM “real”, mediante una biblioteca como ReactDOM. Este proceso se conoce como reconciliación.
+
+// ============== ¿Qué es el reconciliación ? ============== //
+
+Para entender la reconcialicion hay que entender que react hace una actuliazacion de 
+componentes con el ALGORITMO DIFERENCIAL para que sea predecible  y al mismo tiempo 
+sean lo suficiente rápidas para las aplicaciones de alto rendimiento.
+
+// ============== ¿Qué es el algoritmo diferencial ? ============== //
+
+Al diferenciar dos árboles, React primero compara dos elementos raíz. El comportamiento 
+es diferente dependiendo de los tipos de elementos raíz.
+Cada vez que los elementos raíz tienen diferentes tipos, React derribará el árbol viejo y construirá el nuevo árbol desde cero. 
+Pasando de <a> a <img>, o de <Article> a <Comment>, o de <Button> a <div> - cualquiera de esos conducirá a una reconstrucción completa.
+
+Al derribar un árbol, los nodos antiguos del DOM se destruyen. 
+Las instacias de los componentes reciben componentWillUnmount().
+Al construir un nuevo árbol, los nuevos elementos del DOM se insertan. 
+Las instancias de componentes reciben UNSAFE_componentWillMount() y luego componentDidMount(). 
+Cualquier estado asociado al árbol viejo se pierde.
+
+// ============== ¿Qué es el Recursión en hijos ? ============== //
+
+De forma predeterminada, cuando hay recursión en los hijos de un nodo DOM, React simplemente itera
+sobre ambas listas de hijos al mismo tiempo y genera una mutación siempre que haya diferencia.
+
+// ============== Conclusion propia ============== //
+
+El VIRTUAL DOM es un arbol que se gurda en memoria a la hora de ejecutar una aplicaciones, trabaja de manera asicrona con el DOM y a
+la hora de crear una aplicacion, el virtual dom lo que hace es que en cada arbol de la aplicacion se genere de manera recursiva el cambio
+en las distintas partes
+
+

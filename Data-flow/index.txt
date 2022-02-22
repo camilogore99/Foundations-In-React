@@ -1,0 +1,4 @@
+// =============  Explicacin del flujo de datos ================ //
+
+A diferencia de otras librerias y frameworks los datos en react fluyen en una sola dirreccion 
+desde el primer componente hasta el ultimo 
